@@ -1,7 +1,11 @@
-import React from 'react';
+import React,{useState} from 'react';
 import '../../App.css';
+import Input from '../../Input'
 
 function Login() {
+  let[userName,setName] = useState('');
+  let[userPassword,setPasssword] = useState('');
+
   return (
     <div className="App">
       <header className="App-header">
@@ -10,11 +14,19 @@ function Login() {
               <tbody>
                 <tr>
                     <td>User Name</td>
-                    <td><input type="text" name="fname"/></td>
+                    <td>{<Input Id = "txtUserName" Name="usename" type="Text" onChange={(event) => {
+                          setName(event.target.value)
+
+
+                    }}/>}</td>
                 </tr>
                 <tr>
                     <td>Password</td>
-                    <td><input type="password" name="password"/></td>
+                    <td>{<Input Id = "txtPassword" Name="usepassword" type="Password" onChange={(event) => {
+                          setPasssword(event.target.value)
+
+
+                    }}/>}</td>
                 </tr>
                 <tr>
                     <td><button type="button"> Sign In</button></td>

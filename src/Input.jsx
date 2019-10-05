@@ -6,23 +6,16 @@ const setValueOfTextBox = () => {
         //setName(document.getElementById("txtName").value())
 }
 
-function InputBox() {
+function InputBox(props) {
     let [name,setName] = useState("")
 
   return (
     <div>
         {console.log({name})}
-        <input type="text" 
+        <input type={props.type}
                
-                id="txtName"
-                name="Name"
-                onBlur={
-                    (event) => {
-                        console.log(event.target.value)
-                        setName(event.target.value)
-                    }
-
-                }
+                id={props.Id}
+                name={props.Name}
                 />
     </div>
   );
