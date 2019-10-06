@@ -3,28 +3,49 @@ import './App.css';
 import Login from './Components/Login/login';
 import SignUp from './Components/SignUp/Signup';
 import {BrowserRouter, Route, Link, Redirect } from 'react-router-dom';
-
+import Router from './Components/Router'
 import About from './Components/About'
 import Home from './Components/Home'
 import Contact from './Components/Contact'
+import Navigation from './Components/Navigation'
+
+
 
 function App() {
+ let [component, setComponent ] = useState("signin");
 
-return (
-<BrowserRouter>
-<div>
-  <Link to="/">Home</Link> <br/> 
-  <Link to="/About">About</Link> <br/> 
-  <Link to="/Contact" >Contact</Link>
-  <hr/> 
-  <Route exact path="/" component={Home} /> 
-  <Route path="/About" component={About} /> 
-  <Route path="/Contact" component={Contact} />
- <Redirect from="*" to="/" /> 
-</div>
-</BrowserRouter>
+  return (
+    <div className="App">
 
-);
+    
+      <Router/>
+
+    </div>
+
+
+
+  );
+  }
+
+
+
+
+
+
+
+
+// return (
+// {/* <BrowserRouter>
+// <div>
+//   <Navigation/>
+//   <Route exact path="/" component={Home} /> 
+//   <Route path="/About" component={About} /> 
+//   <Route path="/Contact" component={Contact} />
+//  <Redirect from="*" to="/" /> 
+// </div>
+// </BrowserRouter> */}
+
+// );
 
 
 
@@ -50,24 +71,7 @@ return (
 
 
 //let [ variable, function] 
-  // return (
-  //   // <div className="App">
-
-  //   // <header>
-
-  //   //   <div onClick={() => setComponent("signin")}>Sign In</div><br/>
-  //   //   <div onClick={() => setComponent("signup")}>Sign Up</div>
-  //   // </header>
-
-  //   // <section>
-  //   //   {component === "signin" ? <Login/> : <SignUp/>}
-  //   // </section>
-
-  //   // </div>
 
 
-
-  // );
-}
 
 export default App;
