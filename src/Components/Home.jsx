@@ -1,41 +1,24 @@
 import React from 'react';
-
-const data = [{
-id :1,
-name : "Mussaib",
-class:"Class A"
-},
-{
-    id :2,
-    name : "Shayan",
-    class:"Class A"
-    }
-    ,{
-        id :3,
-        name : "Mussaib",
-        class:"Class A"
-        }
-
-
-];
+import {data} from '../Services'
 
 
 function Home(props) {
 
  
-    const showUserDetail = id => {
-        props.history.push(`/Details/` + id);
+    const showUserDetail = user => {
+        props.history.push(`/Details/${user.id}/${user.name}`);
       };
 
       
     return (
         <table>
             <thead>
+            <tr>
             <td>Id</td>
             <td>Name</td>
             <td>Class</td>
             <td/>
-
+            </tr>
             </thead>
             <tbody>
             {
@@ -46,7 +29,7 @@ function Home(props) {
                             <td>{user.id}</td>
                             <td>{user.name}</td>
                             <td>{user.class}</td>
-                            <td>                 <button onClick={() => showUserDetail(user.id)}>
+                            <td>                 <button onClick={() => showUserDetail(user)}>
                   show details
                   </button></td>    
                          </tr>

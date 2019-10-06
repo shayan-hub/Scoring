@@ -1,25 +1,12 @@
 import React, { useState, useEffect } from 'react';
-
-const data = [
-  {
-    id: 1,
-    name: 'Arsalan',
-    class: 'A'
-  },
-  {
-    id: 2,
-    name: 'Tahir',
-    class: 'A'
-  },
-  {
-    id: 3,
-    name: 'Waseem',
-    class: 'A'
-  }
-];
+import {data} from '../Services'
 
 const Details = (props) => {
+
+
   const [user, setUser] = useState(null)
+
+
   const setUserDetails = () => {
     const { id } = props.match.params
     console.log(id);
@@ -33,6 +20,7 @@ const Details = (props) => {
   useEffect(() => {
     setUserDetails();
   }, [])
+
   console.log(user)
   return (
     <div>
