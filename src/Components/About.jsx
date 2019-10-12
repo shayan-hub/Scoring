@@ -4,7 +4,7 @@ import React from 'react';
 function About(props) {
     return (
         <div>
-            This is About page<br />
+            This is About page<br /><br />
             <button onClick={() => {
                 setTimeout(() => {
                     props.history.push('/')
