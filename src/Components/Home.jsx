@@ -1,5 +1,6 @@
 import React from 'react';
 import {data} from '../Services'
+import {Button,Table} from 'react-bootstrap'
 
 
 function Home(props) {
@@ -11,7 +12,7 @@ function Home(props) {
 
       
     return (
-        <table>
+        <Table>
             <thead>
             <tr>
             <td>Id</td>
@@ -29,9 +30,9 @@ function Home(props) {
                             <td>{user.id}</td>
                             <td>{user.name}</td>
                             <td>{user.class}</td>
-                            <td>                 <button onClick={() => showUserDetail(user)}>
+                            <td>                 <Button onClick={() => showUserDetail(user)}>
                   show details
-                  </button></td>    
+                  </Button></td>    
                          </tr>
 
 
@@ -46,7 +47,7 @@ function Home(props) {
 
 
 
-        </table>
+        </Table>
       );    
 }
 

@@ -8,6 +8,7 @@ import About from './Components/About'
 import Home from './Components/Home'
 import Contact from './Components/Contact'
 import Navigation from './Components/Navigation'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
